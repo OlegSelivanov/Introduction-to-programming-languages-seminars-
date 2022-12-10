@@ -1,4 +1,5 @@
-﻿// Task 19 Новое решение для любых чисел
+﻿/*
+// Task 19 Новое решение для любых чисел
 
 Console.Clear();
 
@@ -30,6 +31,7 @@ Console.WriteLine(number == newNumber.ToString());
 В выходной файл OUTPUT.TXT выведите целое число – значение второго максимума.
 */
 
+/*
 Console.Clear();
 int n = int.Parse(Console.ReadLine());
 int maxFirst = n, maxSecond = -1;
@@ -77,6 +79,7 @@ Console.WriteLine(n + m);
 В выходной файл OUTPUT.TXT выведите ответ на задачу.
 */
 
+/*
 Console.Clear();
 int n = Convert.ToInt32(Console.ReadLine());
 int[] array = new int[n];
@@ -151,7 +154,7 @@ Console.Clear();
 Console.Write("Введите число: ");
 double n = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine((1 + n) / 2 * n);
-
+*/
 
 /*Задача 26: 
 Напишите программу, которая принимает на вход число и выдаёт количество цифр в числе.
@@ -161,3 +164,27 @@ Console.WriteLine((1 + n) / 2 * n);
 */
 
 Console.Clear();
+
+
+/*
+// task 28
+
+
+Console.Clear();
+Console.Write("Введите число: ");
+int n = Convert.ToInt32(Console.ReadLine()), res = 1;
+for (int i = 2; i <= n; i++ )
+    res *= i;
+
+Console.WriteLine(res);
+*/
+
+// Задача 30
+
+Console.Clear();
+int n = 8;
+int[] array = new int[n];
+for (int i = 0; i < array.Length; i++)
+    array[i] = new Random().Next(0, 2); // [1, 10]
+
+Console.WriteLine($"[{string.Join(", ", array)}]");
