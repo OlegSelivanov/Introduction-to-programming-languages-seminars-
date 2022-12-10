@@ -163,11 +163,24 @@ Console.WriteLine((1 + n) / 2 * n);
 89126 -> 5
 */
 
-Console.Clear();
-
+/*Console.Clear();
+Console.Write("Введите исло: ");
+int n = Convert.ToInt32(Console.ReadLine()), count = 0;
+while ( n > 0)
+{
+    n /= 10;
+    count ++;
+}
+Console.WriteLine(count);
+*/
 
 /*
-// task 28
+// Задача 28:
+Напишите программу, которая на вход принимает число N и 
+выдает произведение чисел от 1 до N
+
+4 -> 24
+5 -> 120
 
 
 Console.Clear();
