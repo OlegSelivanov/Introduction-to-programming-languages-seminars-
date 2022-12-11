@@ -192,7 +192,7 @@ for (int i = 2; i <= n; i++ )
 Console.WriteLine(res);
 */
 
-// Задача 30
+/*// Задача 30
 
 Console.Clear();
 int n = 8;
@@ -257,4 +257,6 @@ Console.WriteLine($"Начальный массив: [{string.Join(", ", array)}
 Console.Write("Введите число: ");
 int k = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine(ReleaseArray(array, k));
+
+*/
 
