@@ -201,3 +201,60 @@ for (int i = 0; i < array.Length; i++)
     array[i] = new Random().Next(0, 2); // [1, 10]
 
 Console.WriteLine($"[{string.Join(", ", array)}]");
+
+
+
+// task 32
+void InputArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+        array[i] = new Random().Next(-9, 10); // [-9, 9]
+}
+
+
+void ReleaseArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+        array[i] *= (-1);
+}
+
+
+Console.Clear();
+Console.Write("Введите число: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[n]; // {0, 0,....}
+InputArray(array);
+Console.WriteLine($"Начальный массив: [{string.Join(", ", array)}]");
+ReleaseArray(array);
+Console.WriteLine($"Конечный массив: [{string.Join(", ", array)}]");
+
+
+// task 33
+void InputArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+        array[i] = new Random().Next(-9, 10); // [-9, 9]
+}
+
+
+string ReleaseArray(int[] array, int number)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (number == array[i])
+            return "yes";
+    }
+    return "no";
+}
+
+
+Console.Clear();
+Console.Write("Введите число: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[n]; // {0, 0,....}
+InputArray(array);
+Console.WriteLine($"Начальный массив: [{string.Join(", ", array)}]");
+Console.Write("Введите число: ");
+int k = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(ReleaseArray(array, k));
+
