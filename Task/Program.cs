@@ -441,3 +441,49 @@ else
 2 -> 10
 */
 
+/*
+Console.Clear();
+Console.Write("Введите число: ");
+int n = Convert.ToInt32(Console.ReadLine());
+string result = String.Empty;
+while (n > 0)
+{
+    result = Convert.ToString(n % 2) + result;
+    n /= 2; // n = n / 2;
+}
+Console.WriteLine(result);
+*/
+
+/* Задача 44. Не используя рекурсию, введите первые N чисел
+Фибоначчи. Первые два числа Фибоначчи 0 и 1.
+
+
+Console.Clear();
+Console.Write("Введите число: ");
+int n = Convert.ToInt32(Console.ReadLine()), a0 = 0,
+a1 = 1, x;
+for (int i = 0; i < n; i++)
+{
+    Console.Write($"{a0} ");
+    x = a0 + a1;
+    a0 = a1;
+    a1 = x;
+}
+*/
+
+/* Задача 45
+Напишите программу, которая будет создавать копию массива
+с помощью поэлементного копирования.
+
+Console.Clear();
+int[] a = {1, 2, 3, 4, 5};
+int[] b = new int[a.Length];
+
+for (int i = 0; i < a.Length; i++)
+    b[i] = a[i];
+
+b[0] = -5;
+Console.WriteLine(string.Join(" ", a));
+Console.WriteLine(string.Join(" ", b)); // Поэлементное копирование массива
+*/
+
