@@ -340,3 +340,104 @@ InputArray(array);
 Console.WriteLine($"Начальный массив: [{string.Join(", ", array)}]");
 ReleaseArray(array);
 */
+
+
+
+
+/*
+// Семинар 6
+int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
+foreach (int element in size)
+    Console.WriteLine(element * 2); //вывод чисел в массив и умножение на 2
+
+
+    // Задача Суперсдвиг
+
+int n = Convert.ToInt32(Console.ReadLine());
+
+int[] numbers = Console.ReadLine().
+Split(" ").Select(x => int.Parse(x)).ToArray();
+
+int k = Convert.ToInt32(Console.ReadLine());
+k %= n; // k = k % n
+int[] result = new int[n];
+if (k > 0)
+{
+    for (int i = 0; i < k; i++)
+        result[i] = numbers[n - k + i];
+    for (int i = 0; i < n - k; i++)
+        result[k + i] = numbers[i];
+}
+else
+{
+    k = (-1) * k;
+    for (int i = 0; i < k; i++)
+        result[n - k + i] = numbers[i];
+    for (int i = 0; i < n - k; i++)
+        result[i] = numbers[k + i];
+}
+Console.WriteLine(string.Join(" ", result));
+*/
+
+/*
+// double a = new Random().NextDouble() * (end - begin) + begin;
+Console.Write(new Random().NextDouble() * 
+(50 - 10) + 10); // Генерация дробных чисел*/
+
+
+/*
+// Задача 39 Переворот массива.
+
+void InputArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+        array[i] = new Random().Next(1, 11); // [1, 10]
+}
+
+
+void ReleaseArray(int[] array)
+{
+    for (int i = 0; i < array.Length / 2; i++)
+    {
+        int temp = array[i];
+        array[i] = array[array.Length - 1 - i];
+        array[array.Length - 1 - i] = temp;
+    }
+}
+
+
+Console.Clear();
+Console.Write("Введите кол-во элементов: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[n];
+InputArray(array);
+Console.WriteLine($"Начальный массив: [{string.Join(", ", array)}]");
+ReleaseArray(array);
+Console.WriteLine($"Конечный массив: [{string.Join(", ", array)}]");
+*/
+
+/* Задача 40.
+Напишите программу, которая принимает на вход три числа
+и проверяет, может ли существовать треугольник с сторонами такой длины?
+Теорема о неравенстве треугольника: каждая сторона треугольника меньше суммы 
+двух других сторон.*/
+
+/*
+Console.Write("Введите стороны треугольника: ");
+int[] array = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
+
+if (array[0] < array[1] + array[2]
+    && array[1] < array[0] + array[2]
+    && array[2] < array[0] + array[1])
+    Console.Write("Да");
+else
+    Console.Write("Нет");
+*/
+
+/* Задача 42. Напишите программу, которая будет преобразовывать десятичное 
+число в двоичное.
+45 -> 101101
+3 -> 11
+2 -> 10
+*/
+
