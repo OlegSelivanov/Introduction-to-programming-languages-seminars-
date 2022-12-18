@@ -487,3 +487,293 @@ Console.WriteLine(string.Join(" ", a));
 Console.WriteLine(string.Join(" ", b)); // Поэлементное копирование массива
 */
 
+
+
+
+
+
+
+// Семинар 7
+
+//Task Статистика
+
+/*
+int n = Convert.ToInt32(Console.ReadLine());
+int[] numbers = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
+ 
+int countEven = 0, countOdd = 0;
+foreach (int element in numbers)
+{
+    if (element % 2 == 1)
+    {
+        Console.Write($"{element} ");
+        countEven++;
+    }
+}
+Console.WriteLine();
+foreach (int element in numbers)
+{
+    if (element % 2 == 0)
+    {
+        Console.Write($"{element} ");
+        countOdd++;
+    }
+}
+Console.WriteLine();
+
+if (countOdd >= countEven)
+    Console.WriteLine("YES");
+else
+    Console.WriteLine("NO");
+    */
+
+
+
+
+//Task Гипотеза Гольдбаха
+
+/*
+int n = Convert.ToInt32(Console.ReadLine());
+int countDel = 0, i, j, k, m;
+for (i = 2; i <= n / 2; i++)
+{
+    countDel = 0;
+    for (j = 2; j <= i / 2; j++)
+    {
+        if (i % j == 0)
+            countDel++;
+    }
+    if (countDel == 0)
+    {
+        countDel = 0;
+        m = n - i;
+        for (k = 2; k <= (m + 1) / 2; k++)
+        {
+            if (m % k == 0)
+                countDel++;
+        }
+        if (countDel == 0)
+        {
+            Console.WriteLine($"{i} {m}");
+            return;
+        }
+    }
+}
+*/
+
+
+
+// Task 36
+/* Задайте одномерный массив, заполненный случайными числами. 
+Найдите сумму элементов, стоящих на нечётных позициях.*/
+
+/*
+void InputArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+        array[i] = new Random().Next(-10, 11); // [-10, 10]
+}
+
+int SummaOdd(int[] array)
+{
+    int sum = 0;
+    for (int i = 1; i < array.Length; i+=2)
+        sum += array[i];
+    return sum;
+}
+
+Console.Clear();
+Console.Write("Введите кол-во чисел: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[n];
+InputArray(array);
+Console.WriteLine(string.Join(" ", array));
+Console.WriteLine(SummaOdd(array));
+*/
+
+
+
+// Task 38
+/* Задайте массив вещественных чисел. Найдите разницу 
+между максимальным и минимальным элементов массива.
+*/
+
+/*
+void InputArray(double[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+        array[i] = Math.Round(new Random().NextDouble() * (10 + 10) - 10, 2); // [-10, 10]
+}
+
+double MinArray(double[] array)
+{
+    double min = array[0];
+    for (int i = 1; i < array.Length; i++)
+    {
+        if (array[i] < min)
+            min = array[i];
+    }
+    return min;
+}
+
+double MaxArray(double[] array)
+{
+    double max = array[0];
+    for (int i = 1; i < array.Length; i++)
+    {
+        if (array[i] > max)
+            max = array[i];
+    }
+    return max;
+}
+
+Console.Clear();
+Console.Write("Введите кол-во чисел: ");
+int n = Convert.ToInt32(Console.ReadLine());
+double[] array = new double[n];
+InputArray(array);
+Console.WriteLine($"[{string.Join(", ", array)}]");
+Console.WriteLine(MaxArray(array) - MinArray(array));
+*/
+
+/*
+double m = 1.934546653;
+Console.Write(Math.Truncate(m)); обрезает после запятой
+*/
+
+// Task 46
+
+/*
+void InputMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            matrix[i, j] = new Random().Next(-10, 11); // [-10, 10]
+            Console.Write($"{matrix[i, j]} \t");
+        }
+        Console.WriteLine();
+    }
+}
+
+Console.Clear();
+Console.Write("Введите размеры матрицы: ");
+int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
+int[,] matrix = new int[size[0], size[1]];
+InputMatrix(matrix);
+*/
+
+
+// Task 48
+/*
+Задайте двумерный массив размера m на n, каждый элемент в массиве
+находится по формуле: Amn = m + n Выведете полученный массив на экран.
+*/
+
+/*
+void InputMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            matrix[i, j] = i + j;
+            Console.Write($"{matrix[i, j]} \t");
+        }
+        Console.WriteLine();
+    }
+}
+
+Console.Clear();
+Console.Write("Введите размеры матрицы: ");
+int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
+int[,] matrix = new int[size[0], size[1]];
+InputMatrix(matrix);
+*/
+
+/* Задача 49
+Задайте двумерный массив. Найдите элементы, у которых оба индекса не чётные
+и замените эти элементы на их квадраты
+*/
+/*
+void InputMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            matrix[i, j] = new Random().Next(-10, 11); // [-10, 10]
+            Console.Write($"{matrix[i, j]} \t");
+        }
+        Console.WriteLine();
+    }
+}
+
+void ReleaseMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            if (i % 2 == 1 && j % 2 == 1)
+                matrix[i, j] *= matrix[i, j];
+
+            Console.Write($"{matrix[i, j]} \t");
+        }
+        Console.WriteLine();
+    }
+}
+
+Console.Clear();
+Console.Write("Введите размеры матрицы: ");
+int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
+int[,] matrix = new int[size[0], size[1]];
+Console.WriteLine("Начальная матрица: ");
+InputMatrix(matrix);
+Console.WriteLine("Конечная матрица: ");
+ReleaseMatrix(matrix);
+*/
+
+
+/* Задача 51
+Задайте двумерный массив. Найдите сумму элементов, находящихся на 
+главной диагонали (с индексами (0,0); (1,1); и т.д.)
+*/
+
+void InputMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            matrix[i, j] = new Random().Next(-10, 11); // [-10, 10]
+            Console.Write($"{matrix[i, j]} \t");
+        }
+        Console.WriteLine();
+    }
+}
+
+int ReleaseMatrix(int[,] matrix)
+{
+    int sum = 0;
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            if (i == j)
+                sum += matrix[i, j];
+        }
+    }
+    return sum;
+}
+
+Console.Clear();
+Console.Write("Введите размеры матрицы: ");
+int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
+int[,] matrix = new int[size[0], size[1]];
+Console.WriteLine("Начальная матрица: ");
+InputMatrix(matrix);
+Console.Write("Результат: ");
+Console.WriteLine(ReleaseMatrix(matrix));
+
